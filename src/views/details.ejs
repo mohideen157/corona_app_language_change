@@ -1,0 +1,118 @@
+        
+      <div class="container" align="center" style="margin-top: 20px;">
+        <div class="steps-progressbar">
+          <ul>
+              <li class="active">Patient</li>
+              <li>Symptoms</li>
+              <li>Result</li>
+          </ul>
+      </div>  
+      <form method="post" action="/diagonise" id="diag_form" novalidate>
+    
+    <div class="form-field">
+    <div class="form-header">
+          <h2>Please confirm your details</h2>
+        </div>
+        <table>
+          <tr>
+            <td>
+              <label for="Age">Name</label>
+          </td>
+          <td>
+            <input class="input" id="name" name="name" type="text" onchange="validate()"/> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Age">Mobile Number</label>
+        </td>
+        <td>
+          <input class="input" id="mobileno" name="mobileno" type="text" onchange="validate()"/> 
+        </td>
+      </tr>
+            <tr>
+              <td>
+                <label for="Sex">Sex</label>
+              </td>
+              <td>
+                    <table>
+                      <tr>
+                        <td>
+                    <a class="btn btn-sm btn-default sex" data-value="male">
+                      Male
+                    </a>
+                  </td>
+                  <td>
+                    <a class="btn btn-sm btn-default sex" data-value="female">
+                      Female
+                    </a>
+                  </td>
+                  </tr>
+                </div>
+                  </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Age">Age</label>
+          </td>
+          <td>
+            <input class="input" id="age" name="age" type="number" onchange="validate()"/> 
+          </td>
+        </tr>
+      </table>
+      <input type="hidden" name="lang_model" value="<%= lang_model%>" id="lang_model"/>
+      <input type="hidden" class="input" name="sex" id="sex"/>
+    </div>
+    <div class="form-actions">
+      <button class="btn submit-inactive" id="submitBtn" type="button" onclick="validateCheck()">Next</button>
+    </div>
+  </form>
+</div>
+
+<script>
+
+  var lang_model=$('#lang_model').val();
+
+  if(lang_model!=null&&lang_model!=''){
+    $('#choose_lang').val(lang_model);
+  }else{
+    $('#lang_model').val($('#choose_lang').val());
+  }
+
+$('#choose_lang').change(function(){
+      $('#lang_model').val(this.value);
+      $('#diag_form').attr('action','/getDetails');
+      $('#diag_form').submit();
+    });
+
+  $('.sex').on('click',function(){
+    console.log('hi');
+    $('.sex').removeClass('btnactive');
+    $(this).addClass('btnactive');
+    $('#sex').val($(this).data('value'));
+    validate();
+  });
+
+  function validate(){
+    var name=$('#name').val();
+    var mobileno=$('#mobileno').val();
+    var age=$('#age').val();
+    var sex=$('#sex').val();
+
+    if(name!=''&&mobileno!=''&&age!=''&&sex!=''){
+      $('#submitBtn').removeClass('submit-inactive');
+        $('#submitBtn').addClass('submit-active');
+      }else{
+        $('#submitBtn').removeClass('submit-active');
+        $('#submitBtn').addClass('submit-inactive');
+      }
+  }
+
+  function validateCheck(){
+    validate();
+      if($('#submitBtn').hasClass('submit-active')){
+        $('#diag_form').submit();
+      }
+    }
+  </script>

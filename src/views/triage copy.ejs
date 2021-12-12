@@ -1,0 +1,24 @@
+<body>
+  <div class="container">
+  <form method="get" action="/getDetails" novalidate>
+    
+    <div class="form-field">
+
+     
+        <div class="form-header">
+          <h2><%= label %></h2>
+        </div>
+        <label for="emergencyLevel"><h2>Emergency Situation: <%= is_emergency %></h2></label>
+        <label for="Description"><h2><%= description %></h2></label>
+      
+
+
+
+      <input type="hidden" name="sex" id="sex"/>
+    </div>
+    <div class="form-actions">
+      <button class="btn" type="submit">Recheck</button>
+    </div>
+  </form>
+</div>
+</body>

@@ -1,0 +1,110 @@
+
+  <form method="post" action="/diagonise" id="diagonise_form" novalidate>
+
+    <% for(var i=0; i < evidence.length; i++) { %>
+      <input type="hidden" name="symptoms" value="<%= evidence[i].id %>-<%= evidence[i].choice_id %>" id="<%= evidence[i].id %>"/>
+   <% } %>
+  <table>
+    <tr>
+      <th>
+          Diagonosis
+      </th>
+      <th>
+        <% if(questionType=='group_multiple') { %>
+        <a class="btn btn-sm btn-default" id="selectall" data-value="none">
+          Select All
+        </a>
+        <% } %>
+      </th>
+    </tr>
+   
+    
+      
+        <% if(questionType=='group_single') { %>
+          <% for(var i=0; i < data.length; i++) { %>
+            <tr>
+              <td>
+              <a class="btn btn-sm btn-default choose_multiple" data-value="<%= data[i].id %>">
+                <%= data[i].name %>
+              </a>
+              <input type="hidden" name="symptoms" class="choose_multiple_values" value="<%= data[i].id %>-absent" id="<%= data[i].id %>"/>
+            </td>
+          </tr>
+        <% } %>
+        <% } %>
+
+        <% if(questionType=='single'||questionType=='group_multiple') { %>
+          <% for(var i=0; i < data.length; i++) { %>
+          <tr>
+          <td><%= data[i].name %></td>
+            <td>
+              <% if(questionType=='group_multiple') { %>
+                <input type="checkbox" class="symptoms_checkboxes" onchange="checkUncheck(this)" data-value="<%= data[i].id %>"/>
+                <input type="hidden" name="symptoms" value="<%= data[i].id %>-absent" id="<%= data[i].id %>"/>
+              <% } %>
+              <% if(questionType=='single') { %>
+                <a class="btn btn-sm btn-default choose" data-value="<%= data[i].id %>-present">
+                  Yes
+                </a>
+                <a class="btn btn-sm btn-default btnactive choose" data-value="<%= data[i].id %>-absent">
+                  No
+                </a>
+                <input type="hidden" name="symptoms" value="<%= data[i].id %>-absent" id="choose_symptom"/>
+              <% } %>
+            </td>
+          </tr>
+            <% } %>
+          <% } %>
+      
+    
+
+  </table>
+
+    <input type="hidden" id="sex" name="sex" value="<%= sex%>"/>
+    <input type="hidden" id="age" name="age" value="<%= age%>"/>
+    <div class="form-actions">
+      <button class="btn"  type="submit">Next</button>
+    </div>
+  </form>
+  <script>
+
+    $('.choose').on('click',function(){
+      $('.choose').removeClass('btnactive');
+      $(this).addClass('btnactive');
+      $('#choose_symptom').val($(this).attr('data-value'));
+    });
+
+    $('.choose_multiple').on('click',function(){
+      $('.choose_multiple').removeClass('btnactive');
+      $(this).addClass('btnactive');
+      $('.choose_multiple_values').each(function(){
+        this.value=this.value.split('-')+'-absent';
+      });
+
+      let id=$(this).attr('data-value');
+      console.log('this-'+id);
+      $('#'+id).val(id+'-present');
+      
+    });
+
+
+    $('#selectall').on('click',function(){
+      $('.symptoms_checkboxes').each(function(){
+        debugger;
+        this.checked=$('#selectall').attr('data-value')=='none'?true:false;
+        checkUncheck(this);
+      });
+      if($('#selectall').attr('data-value')=='none'){
+        $('#selectall').attr('data-value','all');
+      }else{
+        $('#selectall').attr('data-value','none');
+      }
+    });
+
+    function checkUncheck(element){
+      let id=$(element).attr('data-value');
+      let state=element.checked==true?id+'-present':id+'-absent';
+      $('#'+id).val(state);
+    }
+
+  </script>

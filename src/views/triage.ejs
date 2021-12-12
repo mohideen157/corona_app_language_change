@@ -1,0 +1,67 @@
+        <div class="container" align="center" style="margin-top: 20px;">
+          <div class="steps-progressbar">
+            <ul>
+                <li class="previous">Patient</li>
+                <li class="previous">Symptoms</li>
+                <li class="active">Result</li>
+            </ul>
+        </div>
+  <form method="post" action="/getDetails" id="diag_form" novalidate>
+    
+    <div class="form-field">
+      <div class="form-header">
+          <h2><%= label %></h2>
+        </div>
+        <table>
+          <tr>
+            <td>
+              <label>Emergency?</label>
+          </td>
+          <td>
+            <label><%= is_emergency %></label>
+            
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="solution">solution?</label>
+      
+        </td>
+        <td>
+          <label><%= description %></label>
+        </td>
+      </tr>
+      </table>
+      
+    </div>
+
+    <% for(var i=0; i < evidence.length; i++) { %>
+      <input type="hidden" name="symptoms" value="<%= evidence[i].id %>-<%= evidence[i].choice_id %>" id="<%= evidence[i].id %>"/>
+   <% } %>
+    <input type="hidden" name="lang_model" value="<%= lang_model%>" id="lang_model"/>
+    <input type="hidden" id="name" name="name" value="<%= name%>"/>
+    <input type="hidden" id="mobileno" name="mobileno" value="<%= mobileno%>"/>
+    <input type="hidden" id="sex" name="sex" value="<%= sex%>"/>
+    <input type="hidden" id="age" name="age" value="<%= age%>"/>
+
+    <div class="form-actions">
+      <button class="btn" type="submit">Recheck</button>
+    </div>
+  </form>
+</div>
+<script>
+    var lang_model=$('#lang_model').val();
+
+    if(lang_model!=null&&lang_model!=''){
+      $('#choose_lang').val(lang_model);
+    }else{
+      $('#lang_model').val($('#choose_lang').val());
+    }
+
+  $('#choose_lang').change(function(){
+    debugger;
+      $('#lang_model').val(this.value);
+      $('#diag_form').attr('action','/diagonise');
+      $('#diag_form').submit();
+    });
+</script>

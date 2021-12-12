@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    
+    <title>COVID-19 Risk Assessment</title>
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/css/Pretty-Header.css">
+    <link rel="stylesheet" href="assets/css/Steps-Progressbar.css">
+    <script src="assets/js/jquery.min_copy.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min_copy.js"></script>
+   
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+  <style>
+
+.btn {
+  background: rgb(43,107,231);
+  color: #fff;
+  
+}
+
+.btn:hover,
+.btn:focus {
+  outline: none;
+  background: rgb(77, 124, 226);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+a:not([href]) {
+  color: #fff;
+  text-decoration: none;
+}
+.btnactive{
+  background: rgb(56, 168, 50);
+}
+.form-header {
+  text-transform: uppercase;
+}
+.submit-inactive{
+  background: rgb(182, 184, 188);
+}
+.submit-active{
+  background: rgb(22, 63, 143);
+}
+
+.dropbtn {
+  background-color: #2b6be7;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #4d7ce2;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  height: 200px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+  </style>
+    <header>
+      <nav class="navbar navbar-light navbar-expand-md custom-header" style="background-color: rgb(43,107,231);">
+          <div class="container-fluid">
+              <div><a class="navbar-brand" href="#" style="font-family: 'Abril Fatface', cursive;font-size: 20px;background-color: rgb(43,107,231);">COVID-19 Risk Assessment</a></div>
+              <!--<div class="dropdown" style="width: 124px;"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgb(255,255,255);">English</a>
+                  <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">English</a>
+                    <a class="dropdown-item" role="presentation" href="#">Other</a>
+                    <a class="dropdown-item" role="presentation" href="#">Other</a><a class="dropdown-item" role="presentation" href="#">Other</a><a class="dropdown-item" role="presentation" href="#">Other</a>
+                  </div>-->
+
+                 <!-- <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Languages</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="">English (US)</a>
+                      <a href="">Arabic</a>
+                      <a href="">Arabic (Saudi Arabia)</a>
+                      <a href="">Turkish</a>
+                      <a href="">Spanish</a>
+                      <a href="">Portuguese</a>
+                      <a href="">Brazilian Portuguese</a>
+                      <a href="">French</a>
+                      <a href="">German</a>
+                      <a href="">Italian</a>
+                      <a href="">Polish</a>
+                      <a href="">Czech</a>
+                      <a href="">Ukrainian</a>
+                      <a href="">Simplified Chinese</a>
+                      <a href="">Dutch</a>
+                      <a href="">Slovak</a>
+                      <a href="">Mexican Spanish</a>
+                      <a href="">Spanish (Latin American)</a>
+                      <a href="">Georgian</a>
+                      <a href="">Russian</a>
+                      <a href="">Estonian</a>
+                      <a href="">Croatian</a>
+                      <a href="">Malay</a>
+                      <a href="">Tamil</a>
+                      <a href="">Sinhala</a>
+                      <a href="">Romanian</a>
+                      <a href="">Hindi</a>
+                    </div>
+                  </div>-->
+
+
+                  <select	id="choose_lang" class="btn dropbtn" value="<%= lang_model%>">
+                    <option value="infermedica-en">English (US)</option>
+                    <option value="infermedica-ar">Arabic</option>
+                    <option value="infermedica-ar-sa">Arabic (Saudi Arabia)</option>
+                    <option value="infermedica-tr">Turkish</option>
+                    <option value="infermedica-es">Spanish</option>
+                    <option value="infermedica-pt">Portuguese</option>
+                    <option value="infermedica-pt-br">Brazilian Portuguese</option>
+                    <option value="infermedica-fr">French</option>
+                    <option value="infermedica-de">German</option>
+                    <option value="infermedica-it">Italian</option>
+                    <option value="infermedica-pl">Polish</option>
+                    <option value="infermedica-cz">Czech</option>
+                    <option value="infermedica-uk">Ukrainian</option>
+                    <option value="infermedica-ch">Simplified Chinese</option>
+                    <option value="infermedica-nl">Dutch</option>
+                    <option value="infermedica-sk">Slovak</option>
+                    <option value="infermedica-es-mx">Mexican Spanish</option>
+                    <option value="infermedica-es-xl">Spanish (Latin American)</option>
+                    <option value="infermedica-ka">Georgian</option>
+                    <option value="infermedica-ru">Russian</option>
+                    <option value="infermedica-et">Estonian</option>
+                    <option value="infermedica-hr">Croatian</option>
+                    <option value="infermedica-ms">Malay</option>
+                    <option value="infermedica-ta">Tamil</option>
+                    <option value="infermedica-si-lk">Sinhala</option>
+                    <option value="infermedica-ro">Romanian</option>
+                    <option value="infermedica-hi">Hindi</option>
+                  </select>
+                
+              </div>
+          </div>
+      </nav>
+    </header>
+  <%- body %>
+</body>
+</html>

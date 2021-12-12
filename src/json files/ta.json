@@ -1,0 +1,20 @@
+{    
+    "PLEASE CONFIRM YOUR DETAILS" : "உங்கள் விவரங்களை உறுதிப்படுத்தவும்",
+    "NAME" : "பெயர்",
+    "MOBILE NUMBER" : "கைபேசி எண்",
+    "SEX" : "செக்ஸ்",
+    "Male" : "ஆண்",
+    "Female" : "பெண்",
+    "AGE" : "வயது",
+    "Next" : "அடுத்தது",
+    "Please check all statements that apply to you" : "உங்களுக்கு பொருந்தும் அனைத்து அறிக்கைகளையும் சரிபார்க்கவும்",
+    "EMERGENCY" : "அவசரம்",
+    "YES" : "ஆம்",
+    "NO" : "இல்லை",
+    "Follow Preventive Measures!! Follow atleast 1 meter social distancing!! Use Hand Sanitizers regularly!! If you You have traveled any affected countries, please consult nearest health care provider and follow self quarantine :" : "தடுப்பு நடவடிக்கைகளைப் பின்பற்றுங்கள் !! குறைந்தபட்சம் 1 மீட்டர் சமூக தூரத்தைப் பின்பற்றுங்கள் !! கை சுத்திகரிப்பாளர்களை தவறாமல் பயன்படுத்துங்கள் !! நீங்கள் ஏதேனும் பாதிக்கப்பட்ட நாடுகளில் பயணம் செய்திருந்தால், தயவுசெய்து அருகிலுள்ள சுகாதாரப் பாதுகாப்பு வழங்குநரை அணுகி சுய தனிமைப்படுத்தலைப் பின்பற்றவும்:",
+    "please consult nearest health care provider and follow self quarantine" : "தயவுசெய்து அருகிலுள்ள சுகாதார பராமரிப்பு வழங்குநரை அணுகி சுய தனிமைப்படுத்தலைப் பின்பற்றவும்",
+    "Recheck" : "மீண்டும் சரிபார்க்கவும்",
+    "Patient" : "நோயாளி",
+    "Symptoms" : "அறிகுறிகள்",	
+    "Result" : "விளைவாக"
+}

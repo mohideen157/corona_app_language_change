@@ -1,0 +1,21 @@
+{
+"PLEASE CONFIRM YOUR DETAILS" : "يرجى تأكيد التفاصيل الخاصة بك",
+"NAME" : "اسم",
+"MOBILE NUMBER" : "رقم الهاتف المحمول",
+"SEX" : "الجنس",
+"Male" : "الذكر",
+"Female" : "أنثى",
+"AGE" : "عمر",
+"Next" : "التالى",
+"Please check all statements that apply to you" : "يرجى التحقق من جميع البيانات التي تنطبق عليك",
+"EMERGENCY" : "حالة طوارئ",
+"YES" : "نعم",
+"NO" : "لا",
+"Follow Preventive Measures!! Follow atleast 1 meter social distancing!! Use Hand Sanitizers regularly!! If you You have traveled any affected countries, please consult nearest health care provider and follow self quarantine :" : "اتبع الإجراءات الوقائية !! اتبع على الأقل 1 متر المسافة الاجتماعية !! استخدم معقم اليدين بانتظام !! إذا كنت قد سافرت في أي دول متضررة ، فيرجى استشارة أقرب مقدم رعاية صحية واتباع نظام ",
+"please consult nearest health care provider and follow self quarantine" :"يرجى استشارة أقرب مقدم رعاية صحية واتباع الحجر الصحي الذاتي ",
+"Recheck" : "إعادة فحص",
+"Patient" : "صبور",
+"Symptoms" : "الأعراض",	
+"Result" : "نتيجة"
+
+}

@@ -1,0 +1,119 @@
+  <div class="container" align="center" style="margin-top: 20px;">
+    <div class="steps-progressbar">
+      <ul>
+          <li class="previous">Patient</li>
+          <li class="active">Symptoms</li>
+          <li>Result</li>
+      </ul>
+  </div>
+    <form method="post" action="/diagonise" id="diag_form" novalidate>
+      
+      <div class="form-field">
+          <div class="form-header">
+            <h4>Please check all statements that apply to you</h4>
+          </div>
+          <% for(var i=0; i < evidence.length; i++) { %>
+            <input type="hidden" name="symptoms" value="<%= evidence[i].id %>-<%= evidence[i].choice_id %>" id="<%= evidence[i].id %>"/>
+         <% } %>
+          <table>
+                <% if(questionType=='group_single') { %>
+                  <% for(var i=0; i < data.length; i++) { %>
+                    <tr>
+                      <td>
+                      <a class="btn btn-sm btn-default choose_multiple" data-value="<%= data[i].id %>">
+                        <%= data[i].name %>
+                      </a>
+                      <input type="hidden" name="symptoms" class="choose_multiple_values" value="" id="<%= data[i].id %>"/>
+                    </td>
+                  </tr>
+                <% } %>
+                <% } %>
+        
+                <% if(questionType!='group_single') { %>
+                  <% for(var i=0; i < data.length; i++) { %>
+                  <tr>
+                    <td style="width:800px"><%= data[i].name %></td>
+                    <% for(var j=0; j < data[i].choices.length; j++) { %>
+                        <td style="width:100px" align:"center">
+                        <a style="width : 75px;" class="btn btn-sm btn-default choose choose_<%= data[i].id %>" data-value="<%= data[i].id %>" status="<%= data[i].choices[j].id %>">
+                          <%= data[i].choices[j].label%>
+                        </a>
+                      </td>
+                      <% } %>
+                      <input type="hidden" name="symptoms" class="choose_values" value="" id="<%= data[i].id %>"/>
+                  </tr>
+                    <% } %>
+                  <% } %>
+        </table>
+        
+  
+        <input type="hidden" name="lang_model" value="<%= lang_model%>" id="lang_model"/>
+        <input type="hidden" id="name" name="name" value="<%= name%>"/>
+        <input type="hidden" id="mobileno" name="mobileno" value="<%= mobileno%>"/>
+        <input type="hidden" id="sex" name="sex" value="<%= sex%>"/>
+        <input type="hidden" id="age" name="age" value="<%= age%>"/>
+      </div>
+      <div class="form-actions">
+        <button class="btn submit-inactive" id="submitBtn" type="button" onclick="validateCheck()">Next</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    debugger;
+    var lang_model=$('#lang_model').val();
+
+    if(lang_model!=null&&lang_model!=''){
+      $('#choose_lang').val(lang_model);
+    }else{
+      $('#lang_model').val($('#choose_lang').val());
+    }
+    
+    $('#choose_lang').change(function(){
+      $('#lang_model').val(this.value);
+      $('#diag_form').submit();
+    });
+  
+
+    $('.choose').on('click',function(){
+debugger;
+      let id=$(this).attr('data-value');
+
+      $('.choose_'+id).removeClass('btnactive');
+      $(this).addClass('btnactive');
+
+      
+      let status=$(this).attr('status');
+      $('#'+id).val(id+'-'+status);
+
+      if($('.choose_values').length==$('.btnactive').length){
+        $('#submitBtn').removeClass('submit-inactive');
+        $('#submitBtn').addClass('submit-active');
+      }else{
+        $('#submitBtn').removeClass('submit-active');
+        $('#submitBtn').addClass('submit-inactive');
+      }
+      
+    });
+
+
+    $('.choose_multiple').on('click',function(){
+      $('.choose_multiple').removeClass('btnactive');
+      $(this).addClass('btnactive');
+      $('.choose_multiple_values').each(function(){
+        this.value=this.id+'-absent';
+      });
+
+      let id=$(this).attr('data-value');
+      console.log('this-'+id);
+      $('#'+id).val(id+'-present');
+      $('#submitBtn').addClass('submit-active');
+    });
+
+    function validateCheck(){
+      debugger;
+      if($('#submitBtn').hasClass('submit-active')){
+        $('#diag_form').submit();
+      }
+    }
+
+  </script>

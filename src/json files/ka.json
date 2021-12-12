@@ -1,0 +1,20 @@
+{    
+    "PLEASE CONFIRM YOUR DETAILS" : "გთხოვთ დაადასტუროთ თქვენი დეტალები",
+    "NAME" : "სახელი",
+    "MOBILE NUMBER" : "ᲛᲝᲑᲘᲚᲣᲠᲘᲡ ᲜᲝᲛᲔᲠᲘ",
+    "SEX" : "სექსი",
+    "Male" : "მამაკაცი",
+    "Female" : "ქალი",
+    "AGE" : "ასაკი",
+    "Next" : "შემდეგი",
+    "Please check all statements that apply to you" : "გთხოვთ, შეამოწმოთ ყველა განცხადება, რომელიც ეხება თქვენ",
+    "EMERGENCY" : "საგანგებო მდგომარეობა",
+    "YES" : "დიახ",
+    "NO" : "არა",
+    "Follow Preventive Measures!! Follow atleast 1 meter social distancing!! Use Hand Sanitizers regularly!! If you You have traveled any affected countries, please consult nearest health care provider and follow self quarantine :" : "მიჰყევით პრევენციულ ზომებს !! დაიცავით 1 მეტრიანი სოციალური დისტანციურად !! რეგულარულად გამოიყენეთ ხელის სანიტარული მოწყობილობები !! თუ თქვენ იმოგზაურეთ რომელიმე დაზარალებულ ქვეყანაში, გთხოვთ, გაიაროთ კონსულტაცია უახლოეს ჯანდაცვის პროვაიდერთან და მიჰყევით თვით კარანტინს:",
+    "please consult nearest health care provider and follow self quarantine" : "გთხოვთ, გაიაროთ უახლოესი ჯანდაცვის პროვაიდერი და მიჰყევით თვით კარანტინს",
+    "Recheck" : "გადაამოწმე",
+    "Patient" : "პაციენტი",
+    "Symptoms" : "სიმპტომები",	
+    "Result" : "შედეგი"
+    }

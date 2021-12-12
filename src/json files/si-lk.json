@@ -1,0 +1,20 @@
+{    
+    "PLEASE CONFIRM YOUR DETAILS" : "ඔබේ විස්තර තහවුරු කරන්න",
+    "NAME" : "නාමය",
+    "MOBILE NUMBER" : "ජංගම දූරකථන අංකය",
+    "SEX" : "සෙක්ස්",
+    "Male" : "පිරිමි",
+    "Female" : "ගැහැණු",
+    "AGE" : "වයස",
+    "Next" : "ඊළඟ",
+    "Please check all statements that apply to you" : "කරුණාකර ඔබට අදාළ වන සියලුම ප්‍රකාශ පරීක්ෂා කරන්න",
+    "EMERGENCY" : "හදිසි",
+    "YES" : "ඔව්",
+    "NO" : "නැත",
+    "Follow Preventive Measures!! Follow atleast 1 meter social distancing!! Use Hand Sanitizers regularly!! If you You have traveled any affected countries, please consult nearest health care provider and follow self quarantine :" : "වැළැක්වීමේ පියවර අනුගමනය කරන්න !! අවම වශයෙන් මීටර 1 ක සමාජ දුරස්ථභාවය අනුගමනය කරන්න !! අත් සනීපාරක්ෂක නිතිපතා භාවිතා කරන්න !! ඔබ කිසියම් බලපෑමට ලක් වූ රටක සංචාරය කර ඇත්නම්, කරුණාකර ළඟම ඇති සෞඛ්‍ය සේවා සැපයුම්කරුගෙන් උපදෙස් ලබාගෙන නිරෝධායනය අනුගමනය කරන්න:",
+    "please consult nearest health care provider and follow self quarantine" : "කරුණාකර ළඟම ඇති සෞඛ්‍ය සේවා සැපයුම්කරුගෙන් උපදෙස් ලබාගෙන නිරෝධායනය අනුගමනය කරන්න",
+    "Recheck" : "නැවත පරීක්ෂා කරන්න",
+    "Patient" : "රෝගියා",
+    "Symptoms" : "රෝග ලක්ෂණ",	
+    "Result" : "ප්‍රති ult ලය"
+}
